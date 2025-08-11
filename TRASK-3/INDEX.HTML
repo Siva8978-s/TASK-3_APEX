@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Learning Hub</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#carousel">Gallery</a></li>
+                <li><a href="#weather">Weather</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Interactive Learning</h1>
+                <p>Test your knowledge, explore images, and get real-time weather data</p>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <h2>JavaScript Knowledge Quiz</h2>
+                <div class="quiz-container">
+                    <div class="question-container">
+                        <h3 id="question-text">Loading question...</h3>
+                        <div class="options-container">
+                            <button class="option-btn" data-option="0"></button>
+                            <button class="option-btn" data-option="1"></button>
+                            <button class="option-btn" data-option="2"></button>
+                            <button class="option-btn" data-option="3"></button>
+                        </div>
+                    </div>
+                    <div class="quiz-info">
+                        <span id="question-counter">Question 1 of 5</span>
+                        <span id="score">Score: 0</span>
+                    </div>
+                    <div class="quiz-controls">
+                        <button id="next-btn" class="btn" disabled>Next Question</button>
+                        <button id="restart-btn" class="btn" style="display: none;">Restart Quiz</button>
+                    </div>
+                    <div id="result-container" class="result-container" style="display: none;">
+                        <h3>Quiz Complete!</h3>
+                        <p id="final-score"></p>
+                        <p id="performance-message"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Carousel Section -->
+        <section id="carousel" class="section">
+            <div class="container">
+                <h2>Image Gallery Carousel</h2>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-track-container">
+                            <ul class="carousel-track">
+                                <li class="carousel-slide current-slide">
+                                    <img src="https://picsum.photos/800/400?random=1" alt="Random Image 1">
+                                    <div class="slide-info">
+                                        <h4>Beautiful Landscape</h4>
+                                        <p>Exploring nature's beauty through photography</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=2" alt="Random Image 2">
+                                    <div class="slide-info">
+                                        <h4>Urban Architecture</h4>
+                                        <p>Modern cityscapes and architectural marvels</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=3" alt="Random Image 3">
+                                    <div class="slide-info">
+                                        <h4>Ocean Views</h4>
+                                        <p>Serene waters and coastal landscapes</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=4" alt="Random Image 4">
+                                    <div class="slide-info">
+                                        <h4>Mountain Peaks</h4>
+                                        <p>Majestic heights and alpine adventures</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=5" alt="Random Image 5">
+                                    <div class="slide-info">
+                                        <h4>Forest Paths</h4>
+                                        <p>Peaceful walks through woodland trails</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="carousel-btn carousel-btn--left">&lt;</button>
+                        <button class="carousel-btn carousel-btn--right">&gt;</button>
+                        <div class="carousel-nav">
+                            <button class="carousel-indicator current-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather API Section -->
+        <section id="weather" class="section">
+            <div class="container">
+                <h2>Weather Information</h2>
+                <div class="weather-container">
+                    <div class="weather-search">
+                        <input type="text" id="city-input" placeholder="Enter city name...">
+                        <button id="search-btn" class="btn">Get Weather</button>
+                    </div>
+                    <div class="weather-display">
+                        <div id="loading" class="loading" style="display: none;">Loading weather data...</div>
+                        <div id="weather-info" class="weather-info" style="display: none;">
+                            <div class="weather-main">
+                                <h3 id="city-name"></h3>
+                                <div class="temperature">
+                                    <span id="temp"></span>
+                                    <span class="temp-unit">°C</span>
+                                </div>
+                                <p id="weather-description"></p>
+                            </div>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Feels like:</span>
+                                    <span id="feels-like"></span>°C
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Humidity:</span>
+                                    <span id="humidity"></span>%
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Wind:</span>
+                                    <span id="wind-speed"></span> m/s
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Pressure:</span>
+                                    <span id="pressure"></span> hPa
+                                </div>
+                            </div>
+                        </div>
+                        <div id="error-message" class="error-message" style="display: none;"></div>
+                    </div>
+                    <!-- Fun Facts from API -->
+                    <div class="fun-facts">
+                        <h3>Random Fun Fact</h3>
+                        <div id="fact-container">
+                            <p id="fun-fact">Click the button below to get a random fun fact!</p>
+                            <button id="fact-btn" class="btn">Get New Fact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Interactive Learning Hub. Built with HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
